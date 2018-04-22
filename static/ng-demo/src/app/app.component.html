@@ -1,0 +1,17 @@
+<h1>Angular 5, Django Rest Framework, and CORS Demo App</h1>
+
+<p>This is a mini-CRUD application using a back-end built on Django 2.0 and Django Rest Framework. It also illustrates how to create and send CSRF tokens in the HTTP headers.</p>
+<h2>Spaceships</h2>
+<p *ngFor="let ship of spaceships">
+  {{ ship.name }}
+  Name: <input type="text" name="ship-name" [(ngModel)]="ship.name"><br />
+  Type: <input type="text" name="ship-type" [(ngModel)]="ship.type"><br />
+  Top Speed: <input type="text" name="ship-top_speed" [(ngModel)]="ship.top_speed"><br />
+  <button (click)="updateShip(ship)">Save</button> <button (click)="deleteShip(ship)">Delete</button>
+</p>
+<p>Create a new spaceship:<br />
+  Name: <input type="text" name="ship-name" [(ngModel)]="new_ship?.name"><br />
+  Type: <input type="text" name="ship-type" [(ngModel)]="new_ship?.type"><br />
+  Top Speed: <input type="text" name="ship-top_speed" [(ngModel)]="new_ship?.top_speed"><br />
+  <button (click)="createShip()">Save</button>
+</p>

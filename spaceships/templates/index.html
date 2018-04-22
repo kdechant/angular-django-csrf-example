@@ -2,5 +2,11 @@
 {% load staticfiles %}
 
 {% block content %}
-The app will go here
+  <app-root></app-root>
+
+  <script type="text/javascript" src="{% static 'ng-demo/dist/inline.bundle.js' %}"></script>
+  <script type="text/javascript" src="{% static 'ng-demo/dist/polyfills.bundle.js' %}"></script>
+  <script type="text/javascript" src="{% static 'ng-demo/dist/styles.bundle.js' %}"></script>
+  <script type="text/javascript" src="{% static 'ng-demo/dist/vendor.bundle.js' %}"></script>
+  <script type="text/javascript" src="{% static 'ng-demo/dist/main.bundle.js' %}"></script>
 {% endblock %}
