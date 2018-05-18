@@ -10,8 +10,8 @@
   <button (click)="updateShip(ship)">Save</button> <button (click)="deleteShip(ship)">Delete</button>
 </p>
 <p>Create a new spaceship:<br />
-  Name: <input type="text" name="ship-name" [(ngModel)]="new_ship?.name"><br />
-  Type: <input type="text" name="ship-type" [(ngModel)]="new_ship?.type"><br />
-  Top Speed: <input type="text" name="ship-top_speed" [(ngModel)]="new_ship?.top_speed"><br />
+  Name: <input type="text" name="ship-name" [(ngModel)]="new_ship.name"><br />
+  Type: <input type="text" name="ship-type" [(ngModel)]="new_ship.type"><br />
+  Top Speed: <input type="text" name="ship-top_speed" [(ngModel)]="new_ship.top_speed"><br />
   <button (click)="createShip()">Save</button>
 </p>
