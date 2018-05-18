@@ -15,9 +15,5 @@ class SpaceshipViewSet(viewsets.ModelViewSet):
     """
     Provides basic CRUD functions for the Spaceship model
     """
-    queryset = Spaceship.objects.filter()
+    queryset = Spaceship.objects.all()
     serializer_class = serializers.SpaceshipSerializer
-
-    def get_queryset(self):
-        queryset = self.queryset
-        return queryset

@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import {Observable} from 'rxjs/Observable';
 
 const httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -24,7 +23,7 @@ export class SpaceshipService {
     // send a POST request to the API to create a new data object
     create(ship) {
         let body = JSON.stringify(ship);
-        return this.http.post('/api/spaceships/', body, httpOptions);
+        return this.http.post('/api/spaceships', body, httpOptions);
     }
 
     // send a PUT request to the API to update a data object
