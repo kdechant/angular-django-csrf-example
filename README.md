@@ -1,6 +1,6 @@
-# Angular 6 / Django Rest Framework / CORS demo app
+# Angular 6 / Django Rest Framework / CSRF demo app
 
-This is a demo app showing how to make API calls with Angular 6 and Django Rest Framework, including how to send CORS headers so API calls will function when logged in.
+This is a demo app showing how to make API calls with Angular 6 and Django Rest Framework, including how to send CSRF headers so API calls will function when logged in.
 
 ## What this repo contains
 
