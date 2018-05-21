@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie';
 
 @Injectable()
-export class SpaceshipService {
+export class UserService {
 
     // http options used for making any writing API calls
     private httpOptions: any;
@@ -20,26 +20,10 @@ export class SpaceshipService {
         };
     }
 
-    // Uses http.get() to load data from a single API endpoint
-    list() {
-        return this.http.get('/api/spaceships');
-    }
-
-    // send a POST request to the API to create a new data object
-    create(ship) {
-        let body = JSON.stringify(ship);
-        return this.http.post('/api/spaceships', body, this.httpOptions);
-    }
-
-    // send a PUT request to the API to update a data object
-    update(ship) {
-        let body = JSON.stringify(ship);
-        return this.http.put('/api/spaceships/' + ship.id, body, this.httpOptions);
-    }
-
-    // send a DELETE request to the API to delete a data object
-    delete(ship) {
-        return this.http.delete('/api/spaceships/' + ship.id, this.httpOptions);
+    // Uses http.post() to get an auth token from djangorestframework-jwt endpoint
+    login(user) {
+        let body = JSON.stringify(user);
+        return this.http.post('/api-token-auth/', body, this.httpOptions);
     }
 
 }

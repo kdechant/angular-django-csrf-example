@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {SpaceshipService} from './spaceship.service';
+import {UserService} from './user.service';
 import {Observable} from 'rxjs/Rx';
 
 @Component({
@@ -8,6 +9,16 @@ import {Observable} from 'rxjs/Rx';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  /**
+   * An object representing the user for the login form
+   */
+  public user: any;
+
+  /**
+   * The JWT token (for user auth)
+   */
+  public jwt_token: string;
 
   /**
    * An array of all the Spaceship objects from the API
@@ -19,11 +30,24 @@ export class AppComponent {
    */
   public new_ship: any;
 
-  constructor(private _spaceshipService: SpaceshipService) { }
+  constructor(private _spaceshipService: SpaceshipService, private _userService: UserService) { }
 
   ngOnInit() {
     this.getSpaceships();
     this.new_ship = {};
+    this.user = {
+      username: '',
+      password: '',
+      errors: ['errors go here'],
+      token: ''
+    }
+  }
+
+  login() {
+    this._userService.login({'username': this.user.username, 'password': this.user.password}).subscribe(
+      data => { console.log('login success', data); this.user.token = data['token']; },
+      err => { console.error('login error', err); this.user.errors = err['error']['non_field_errors']; }
+    );
   }
 
   getSpaceships() {

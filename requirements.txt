@@ -5,6 +5,7 @@ coreschema==0.0.4
 Django==2.0.4
 django-rest-swagger==2.1.2
 djangorestframework==3.8.2
+djangorestframework-jwt==1.11.0
 idna==2.6
 itypes==1.1.0
 Jinja2==2.10

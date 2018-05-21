@@ -6,6 +6,7 @@ import { CookieModule } from 'ngx-cookie';
 
 import { AppComponent } from './app.component';
 import {SpaceshipService} from "./spaceship.service";
+import {UserService} from "./user.service";
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import {SpaceshipService} from "./spaceship.service";
   imports: [
     BrowserModule, FormsModule, HttpClientModule, CookieModule.forRoot(),
   ],
-  providers: [SpaceshipService],
+  providers: [SpaceshipService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

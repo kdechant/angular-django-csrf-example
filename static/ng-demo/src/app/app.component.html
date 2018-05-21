@@ -1,3 +1,16 @@
+<h2>Log In</h2>
+<div class="row">
+  <label class="col-md-3">Username:</label>
+  <div class="col-md-9 mb-1"><input type="text" name="login-username" [(ngModel)]="user.username"></div>
+  <label class="col-md-3">Password:</label>
+  <div class="col-md-9 mb-1"><input type="text" name="login-password" [(ngModel)]="user.password"></div>
+  <div class="col-md-9 offset-3">
+    <button (click)="login()" class="btn btn-primary">Log In</button>&nbsp;
+  </div>
+  <div class="col-md-12">Errors: <span *ngFor="let error of user.errors">{{ user.errors }}</span></div>
+  <div class="col-md-12">Token: {{ user.token }}</div>
+</div>
+
 <h2>Spaceships</h2>
 <div *ngFor="let ship of spaceships">
   <h3>{{ ship.name }}</h3>
